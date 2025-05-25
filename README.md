@@ -1,54 +1,72 @@
-# React + TypeScript + Vite
+# Login Page Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a responsive login page built with React and TypeScript, featuring form validation and a clean user interface. It was developed as a solution to the FE Dev Test Requirements.
 
-Currently, two official plugins are available:
+**Live Demo:** [https://dalroy44.github.io/login-page/](https://dalroy44.github.io/login-page/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+* **User Authentication Form:**
+    * Username (Email) and Password fields.
+    * Client-side validation for email format and password length (minimum 8 characters).
+    * Error messages displayed for invalid input.
+* **Password Visibility Toggle:** "Show/Hide" option for the password field.
+* **Submission Handling:**
+    * "Sign In" button is disabled until both fields have valid input.
+    * Simulated API call with a 2-second loader on submission.
+    * Displays "Sign In Successful" or "Sign In Failed" messages.
+* **Responsive Design:** The layout adapts to different screen sizes.
+* **Accessibility:** Implemented with accessibility considerations, including ARIA attributes where appropriate and addressing Lighthouse report feedback.
+* **Additional UI Elements:**
+    * "Forgot password?" link.
+    * "or continue with" social login section.
+    * Placeholder "Google" and "Facebook" social login buttons.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+* **React:** For building the user interface.
+* **TypeScript:** For static typing and improved code quality.
+* **Vite:** As the build tool and development server.
+* **CSS:** Custom CSS with theme variables (custom properties) for styling.
+* **HTML**
+* **Git & GitHub:** For version control.
+* **GitHub Pages:** For deployment.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Setup and Running Locally
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/dalroy44/login-page.git
+    cd login-page
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    The application will typically be available at `http://localhost:5173`.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+4.  **Build for production:**
+    ```bash
+    npm run build
+    ```
+    This will create a `dist` folder with the optimized static assets.
+
+## Screenshots
+
+### Final Output
+
+Here's a look at the login page:
+
+![Login Page](assets/final_output.png)  ### Lighthouse Accessibility Report
+
+The project aims for high accessibility standards.
+
+![Lighthouse Accessibility Report](assets/lighthouse_report.png) *
+
+## Deployment
+
+This application is deployed using GitHub Pages. The deployment workflow is configured in `.github/workflows/deploy.yml` and triggers automatically on pushes to the `main` branch.
