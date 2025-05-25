@@ -43,8 +43,15 @@ body {
   border: 2px solid var(--color-primary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 400px;
-  max-width: 600px;
   box-sizing: border-box;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 440px) {
+  .container {
+    width: 360px; 
+    padding: 25px; 
+  }
 }
 
 .form-group {
